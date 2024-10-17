@@ -262,6 +262,11 @@ body.dark-theme {
   row-gap: 2rem;
 }
 
+.nav__logo-img {
+  max-width: 85px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
 .nav__link {
   color: var(--title-color);
   font-weight: var(--font-medium);
@@ -730,37 +735,59 @@ body.dark-theme {
   margin-bottom: var(--mb-1-5);
 }
 
-/*=============== NEWSLETTER ===============*/
-.newsletter__bg {
-  background-color: var(--first-color);
+/*=============== CONTACT ===============*/
+.contact__bg {
+  background-color: #2c2c2c; /* Dark background color */
   padding: 3rem 1.5rem;
   text-align: center;
-  row-gap: 2.5rem;
+  border-radius: 0; /* Sharp edges */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
 }
 
-.newsletter__title {
+.contact__title {
   font-size: var(--h1-font-size);
-  color: hsl(0, 0%, 15%);
+  color: white; /* White text */
   margin-bottom: var(--mb-1-5);
 }
 
-.newsletter__description {
-  color: hsl(0, 0%, 35%);
+.contact__description {
+  color: hsl(0, 0%, 80%); /* Light grey text */
+  margin-bottom: 2rem; /* Add margin for spacing */
 }
 
-.newsletter__subscribe {
+.contact__form {
   display: flex;
   flex-direction: column;
-  row-gap: .75rem;
+  row-gap: 1rem; /* Spacing between fields */
 }
 
-.newsletter__input {
+.contact__input, .contact__textarea {
   border: none;
   outline: none;
-  background-color: hsl(0, 0%, 94%);
+  background-color: #444; /* Dark input background */
   padding: 1.25rem 1rem;
-  color: hsl(0, 0%, 15%);
+  color: white; /* White text */
+  border-radius: 0; /* Sharp edges */
 }
+
+.contact__textarea {
+  resize: none; /* Prevent resizing */
+  height: 150px; /* Set height for textarea */
+}
+
+.button {
+  padding: 1rem;
+  background-color: hsl(31, 76%, 74%); /* Adjust color for your theme */
+  color: white; /* White text */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
 
 /*=============== FOOTER ===============*/
 .footer__container {

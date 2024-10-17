@@ -94,7 +94,7 @@ const scrollUp = () =>{
 						: scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
-
+/*CART/ 
 /*=============== SHOW CART ===============*/
 const cart = document.getElementById('cart'),
       cartShop = document.getElementById('cart-shop'),
@@ -115,6 +115,77 @@ if(cartClose){
         cart.classList.remove('show-cart')
     })
 }
+
+// Initialize cart item count
+let cartItemCount = 0;
+
+// Get the cart count element
+const cartCount = document.getElementById('cart-count');
+
+// Get the cart container where items will be added
+const cartItemsContainer = document.getElementById('cart-items');
+
+// Get all "Add to Cart" buttons
+const addToCartButtons = document.querySelectorAll('.products__button');
+
+// Add event listeners to all buttons
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        cartItemCount++;
+        updateCartCount();
+        addItemToCart(button);
+    });
+});
+
+// Function to update the cart count displayed next to the icon
+function updateCartCount() {
+    cartCount.textContent = cartItemCount;
+}
+
+// Function to add the selected product to the cart
+function addItemToCart(button) {
+    const productCard = button.closest('.products__card');
+    const productTitle = productCard.querySelector('.products__title').textContent;
+    const productPrice = productCard.querySelector('.products__price').textContent;
+    const productImg = productCard.querySelector('.products__img').src;
+
+    // Create the cart item element
+    const cartArticle = document.createElement('article');
+    cartArticle.classList.add('cart__card');
+    cartArticle.innerHTML = `
+        <div class="cart__box">
+            <img src="${productImg}" alt="" class="cart__img">
+        </div>
+        <div class="cart__details">
+            <h3 class="cart__title">${productTitle}</h3>
+            <span class="cart__price">${productPrice}</span>
+            <div class="cart__amount">
+                <div class="cart__amount-content">
+                    <span class="cart__amount-box">
+                        <i class='bx bx-minus'></i>
+                    </span>
+                    <span class="cart__amount-number">1</span>
+                    <span class="cart__amount-box">
+                        <i class='bx bx-plus'></i>
+                    </span>
+                </div>
+                <i class='bx bx-trash-alt cart__amount-trash'></i>
+            </div>
+        </div>
+    `;
+
+    // Add delete functionality to the trash icon
+    const trashIcon = cartArticle.querySelector('.cart__amount-trash');
+    trashIcon.addEventListener('click', () => {
+        cartArticle.remove(); // Remove the item from the cart
+        cartItemCount--;
+        updateCartCount(); // Update the cart count after item removal
+    });
+
+    // Add the cart item to the cart container
+    cartItemsContainer.appendChild(cartArticle);
+}
+
 
 /*=============== DARK LIGHT THEME ===============*/ 
 const themeButton = document.getElementById('theme-button')
