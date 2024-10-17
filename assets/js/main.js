@@ -185,6 +185,60 @@ function addItemToCart(button) {
     // Add the cart item to the cart container
     cartItemsContainer.appendChild(cartArticle);
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const cartItems = document.getElementById('cart-items');
+    const checkoutMessage = document.getElementById('checkout-message');
+    const cartCount = document.getElementById('cart-count');
+
+    // Event listener for checkout button
+    checkoutBtn.addEventListener('click', () => {
+        if (cartItems.children.length > 0) {
+            // If cart has items, proceed to show thank you message
+            checkoutMessage.style.display = 'block';
+        } else {
+            // If cart is empty, prevent checkout and show a prompt
+            checkoutMessage.style.display = 'none';
+            alert('Your cart is empty. Please add items to proceed.');
+        }
+    });
+
+    // Example function to simulate adding items to cart
+    function addItemToCart(item) {
+        const newItem = document.createElement('div');
+        newItem.textContent = item;
+        cartItems.appendChild(newItem);
+
+        // Update cart count
+        cartCount.textContent = cartItems.children.length;
+    }
+
+    // Example: Adding items to the cart (You can use your logic here)
+    // addItemToCart('Watch 1'); // Uncomment this line to add a test item
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const cart = document.getElementById('cart');
+    const body = document.body;
+    
+    // Function to disable scroll on the body
+    function disableBodyScroll() {
+        body.style.overflow = 'hidden';
+    }
+
+    // Function to enable scroll on the body
+    function enableBodyScroll() {
+        body.style.overflow = 'auto';
+    }
+
+    // Add event listeners for when the mouse enters and leaves the cart
+    cart.addEventListener('mouseenter', () => {
+        disableBodyScroll(); // Disable page scroll when mouse is inside the cart
+    });
+
+    cart.addEventListener('mouseleave', () => {
+        enableBodyScroll(); // Enable page scroll when mouse leaves the cart
+    });
+});
 
 
 /*=============== DARK LIGHT THEME ===============*/ 

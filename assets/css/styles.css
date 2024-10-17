@@ -279,6 +279,42 @@ body.dark-theme {
   color: var(--first-color);
 }
 
+#checkout-btn {
+  margin-top: 1.5rem;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+#checkout-message {
+  text-align: center;
+}
+.cart {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  overflow: hidden; /* Prevent scrolling by default */
+  background-color: var(--background-color); /* Adjust as per your theme */
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.cart-items-container {
+  max-height: 60vh; /* Limit the height for the cart items */
+  overflow-y: auto; /* Enable vertical scrolling when necessary */
+  padding-right: 1rem; /* Optional: space for scrollbar */
+}
+
+/* Optional styling to highlight when scrolling is active */
+.cart:hover {
+  border-left: 3px solid var(--first-color);
+}
+
 .nav__close {
   font-size: 2rem;
   position: absolute;
@@ -369,6 +405,23 @@ body.dark-theme {
 
 .home__button {
   box-shadow: 0 12px 24px hsla(0, 0%, 10%, .2);
+}
+
+.home__subtitle {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1);
+  color: var(--first-color);
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--mb-1);
+}
+
+.home__description {
+  margin-bottom: var(--mb-2);
 }
 
 /*=============== BUTTONS ===============*/

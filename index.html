@@ -32,13 +32,16 @@
                             <a href="#home" class="nav__link active-link">Home</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#featured" class="nav__link">Featured</a>
+                            <a href="#about" class="nav__link">About</a>
                         </li>
                         <li class="nav__item">
                             <a href="#products" class="nav__link">Products</a>
                         </li>
                         <li class="nav__item">
                             <a href="#new" class="nav__link">New</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact</a>
                         </li>
                     </ul>
 
@@ -63,33 +66,43 @@
         </header>
 
    <!--==================== CART ICON WITH COUNT ====================-->
-   <div class="cart-icon">
-    <i class='bx bx-shopping-bag' id="cart-shop"></i>
-    <span id="cart-count">0</span> <!-- Updated Cart Count -->
-</div>
+
 
            <!--==================== CART ====================-->
-    <div class="cart" id="cart">
-        <i class='bx bx-x cart__close' id="cart-close"></i>
-        <h2 class="cart__title-center">My Cart</h2>
+           <div class="cart" id="cart">
+            <i class='bx bx-x cart__close' id="cart-close"></i>
+            <span id="cart-count">0</span> <!-- Updated Cart Count -->
+            <h2 class="cart__title-center">My Cart</h2>
+            
+            <!-- Cart items will be added here dynamically -->
+            <div id="cart-items"></div> <!-- This container will hold cart items dynamically -->
         
-        <!-- Cart items will be added here dynamically -->
-        <div id="cart-items"></div> <!-- This container will hold cart items dynamically -->
-
-        <div class="cart__prices">
-            <!-- You can add total prices or other elements here later if needed -->
+        
+            <!-- Checkout Button -->
+            <button id="checkout-btn" class="button button--small">Checkout</button>
+        
+            <!-- Message Area for displaying "Thank You" -->
+            <p id="checkout-message" style="display: none; color: green; margin-top: 1rem;">Thank you for your purchase!</p>
         </div>
-    </div>
+        
 
         <!--==================== MAIN ====================-->
         <main class="main">
-            <!--==================== HOME ====================-->
             <section class="home" id="home">
                 <div class="home__container container grid">
                     <div class="home__img-bg">
-                        <img src="assets/img/home.png" alt="" class="home__img">
+                        <img src="assets/img/home.png" alt="WristWatch Collection" class="home__img">
                     </div>
-    
+            
+                    <div class="home__data">
+                        <h2 class="home__subtitle">Welcome to WristWatch</h2>
+                        <h1 class="home__title">Discover Timeless Elegance</h1>
+                        <p class="home__description">
+                            Explore our exclusive collection of luxurious watches, crafted with precision and designed for those who value sophistication. Whether you’re searching for classic or contemporary, we have the perfect timepiece for you.
+                        </p>
+                        <a href="#products" class="button button--small">Shop Now</a>
+                    </div>
+            
                     <div class="home__social">
                         <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
                             Facebook
@@ -101,51 +114,38 @@
                             Instagram
                         </a>
                     </div>
-    
-                    <div class="home__data">
-                        <h1 class="home__title">NEW WATCH <br> COLLECTIONS B720</h1>
-                        <p class="home__description">
-                            Latest arrival of the new imported watches of the B720 series, 
-                            with a modern and resistant design.
-                        </p>
-                        <span class="home__price">$1245</span>
-
-                        
-
-                            <button class="button home__button">ADD TO CART</button>
-                        </div>
-                    </div>
                 </div>
             </section>
+            
+           <!-- Story -->
 
-           
-
-            <!--==================== STORY ====================-->
-            <section class="story section container">
+            <section class="story section container" id="about">
                 <div class="story__container grid">
                     <div class="story__data">
                         <h2 class="section__title story__section-title">
                             Our Story
                         </h2>
-    
+            
                         <h1 class="story__title">
-                            Inspirational Watch of <br> this year
+                            Crafting Timepieces <br> with Passion
                         </h1>
-    
+            
                         <p class="story__description">
-                            The latest and modern watches of this year, is available in various 
-                            presentations in this store, discover them now.
+                            At Wristify, we believe a watch is more than just an accessory—it's a statement, a reflection of your personal style. 
+                            Founded with the vision of bringing luxury and elegance to your wrist, we’ve been creating timeless designs that combine 
+                            precision, innovation, and craftsmanship. Each piece we offer is carefully curated to meet the highest standards of quality.
                         </p>
-    
-                        <a href="#" class="button button--small">Discover</a>
+            
+                       
                     </div>
-
+            
                     <div class="story__images">
                         <img src="assets/img/story.png" alt="" class="story__img">
                         <div class="story__square"></div>
                     </div>
                 </div>
             </section>
+            
 
             <!--==================== PRODUCTS ====================-->
     <section class="products section container" id="products">
@@ -242,9 +242,7 @@
                                     <i class='bx bxs-quote-alt-left' ></i>
                                 </div>
                                 <p class="testimonial__description">
-                                    They are the best watches that one acquires, also they are always with the latest 
-                                    news and trends, with a very comfortable price and especially with the attention 
-                                    you receive, they are always attentive to your questions.
+                                    Wristify has completely transformed the way we connect with our customers. As a marketing manager, I’ve worked with numerous e-commerce platforms, but none have matched the level of professionalism, design, and user experience that Wristify offers. The sleek and modern interface not only enhances our brand’s image but also makes shopping for luxury timepieces a breeze. The customer journey is seamless from start to finish, which has significantly boosted our conversion rates. Wristify has become our go-to platform, and I highly recommend it to any brand looking to elevate their online presence.
                                 </p>
                                 <h3 class="testimonial__date">June 07. 2024</h3>
         
@@ -263,9 +261,7 @@
                                     <i class='bx bxs-quote-alt-left' ></i>
                                 </div>
                                 <p class="testimonial__description">
-                                    They are the best watches that one acquires, also they are always with the latest 
-                                    news and trends, with a very comfortable price and especially with the attention 
-                                    you receive, they are always attentive to your questions.
+                                    Wristify has been a game-changer for our business. As the director, I’ve always prioritized offering our customers a premium shopping experience, and Wristify has exceeded all expectations. The platform’s design is elegant and user-friendly, perfectly complementing the high-end watches we offer. What truly sets Wristify apart is the attention to detail, from the intuitive navigation to the seamless checkout process. Our sales have seen a significant increase since switching to this platform, and customer feedback has been overwhelmingly positive. Wristify has helped us take our brand to the next level.
                                 </p>
                                 <h3 class="testimonial__date">March 27. 2021</h3>
         
@@ -298,7 +294,7 @@
             <!--==================== NEW ====================-->
             <section class="new section container" id="new">
                 <h2 class="section__title">
-                    New Arrivals
+                     Coming Soon
                 </h2>
                 
                 <div class="new__container">
@@ -314,7 +310,7 @@
                                     <span class="new__price">$980</span>
                                 </div>
         
-                                <button class="button new__button">ADD TO CART</button>
+                             
                             </article>
 
                             <article class="new__card swiper-slide">
@@ -327,7 +323,7 @@
                                     <span class="new__price">$1150</span>
                                 </div>
         
-                                <button class="button new__button">ADD TO CART</button>
+                              
                             </article>
 
                             <article class="new__card swiper-slide">
@@ -340,7 +336,7 @@
                                     <span class="new__price">$750</span>
                                 </div>
         
-                                <button class="button new__button">ADD TO CART</button>
+                              
                             </article>
 
                             <article class="new__card swiper-slide">
@@ -353,13 +349,15 @@
                                     <span class="new__price">$1590</span>
                                 </div>
         
-                                <button class="button new__button">ADD TO CART</button>
+                              
                             </article>                       
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="contact section container">
+
+            <!-- Contact Section -->
+            <section class="contact section container" id="contact">
                 <div class="contact__bg grid">
                     <div>
                         <h2 class="contact__title">Contact Us</h2>
@@ -368,16 +366,18 @@
                         </p>
                     </div>
             
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Your Name" class="contact__input" required>
-                        <input type="email" placeholder="Your Email" class="contact__input" required>
-                        <textarea placeholder="Your Message" class="contact__textarea" required></textarea>
-                        <button class="button">
+                    <!-- Form using Formspree to send an email -->
+                    <form action="https://formspree.io/f/xanyyved" method="POST" class="contact__form">
+                        <input type="text" name="name" placeholder="Your Name" class="contact__input" required>
+                        <input type="email" name="email" placeholder="Your Email" class="contact__input" required>
+                        <textarea name="message" placeholder="Your Message" class="contact__textarea" required></textarea>
+                        <button type="submit" class="button">
                             SEND MESSAGE
                         </button>
                     </form>
                 </div>
             </section>
+            
             
             
 
